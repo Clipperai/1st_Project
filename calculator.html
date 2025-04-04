@@ -27,7 +27,8 @@
 
         <button class="button" onclick="currentDisplay= currentDisplay + '6'; document.querySelector('#display').value = currentDisplay;">6</button>
 
-        <button class="button" onclick="currentDisplay= currentDisplay + '*'; document.querySelector('#display').value = currentDisplay;">*</button>zument.querySelector('#display').vaaaalue = currentDisplay;">7</button>
+        <button class="button" onclick="currentDisplay= currentDisplay + '*'; document.querySelector('#display').value = currentDisplay;">*</button>
+        <button class="button" onclick="currentDisplay= currentDisplay + '7'; document.querySelector('#display').value = currentDisplay;">7</button>
         <button class="button" onclick="currentDisplay= currentDisplay + '8'; document.querySelector('#display').value = currentDisplay;">8</button>
         
         <button class="button" onclick="currentDisplay= currentDisplay + '/'; document.querySelector('#display').value = currentDisplay;">/</button>
@@ -51,38 +52,36 @@
       let currentDisplay = "";
       document.querySelector('#display').value = currentDisplay;
 
-      let fare=40;
+      // let FinalDiscount=40;
       let age=prompt("Enter Your age:");
+      // let age= 40;
+      let FinalDiscount;
+      let gender="female";
 
-      if(age<=8){
-        fare=fare/2;
+
+      if(age<=5){
+        FinalDiscount=100;
+        alert(`you got a ${FinalDiscount}  off price ticket!`);
+      }
       
-      if(age<5) {
-        fare=0;
+     else if(age>5&&age<=8||gender==="female") {
+        FinalDiscount=50;
        
-        alert("your fare price is 0:",fare);
+        alert(`you got a ${FinalDiscount}  off price ticket!`);
+        alert("your FinalDiscount price is 50:",FinalDiscount);
         exit;
+      
+
+     }
+      else if(age>65){
+        FinalDiscount=30;
+        alert(`you got a ${FinalDiscount}  off price ticket!`);
       }
-      alert("you got a half price ticket!");
 
-    }
-      else if(age>65&&age>8){
-        fare=fare*30/100;
-        alert("you got a 30% off price ticket!");
-
+      else {
+        FinalDiscount=0;
+        alert(`you got a ${FinalDiscount}  off price ticket!`);
       }
-    
-
-        if(fare!=0){
-          let gender=prompt("Enter Your gender:");
-         if(gender==="female"){
-        fare=fare/2;
-        alert("you got a half price ticket!");
-      }
-    }
-
-     
-
 
       </script>
   </body>
